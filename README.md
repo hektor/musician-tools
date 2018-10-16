@@ -1,3 +1,3 @@
-# Music Theory website
+# Music Theory Website
 
 Interactive music theory website
