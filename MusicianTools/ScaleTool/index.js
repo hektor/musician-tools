@@ -29,19 +29,41 @@ function majorScale(key) {
         const majorScaleIntervals = [0, 2, 4, 5, 7, 9, 11];
         for(let i = 0; i < majorScaleIntervals.length; i++){
             const majorScale = chromaFlat[(key + majorScaleIntervals[i])%(chromaFlat.length)];
-            console.log(majorScale);
+            //console.log(majorScale);
         };
     }
 }
-// generates minor scale interval pattern
-function minorScale(key) {
-     // OPTIONS
-     // work from mode perspective
-     // work again with steps
-}
-
 majorScale(1);
 
+class Scale {
+    constructor(key, type) {
+    }
+    // generates major scale from interval pattern
+    major(key) {
+        const majorIntervals = [0, 2, 4, 5, 7, 9, 11];
+        for(let i = 0; i < majorIntervals.length; i++){
+            return chromaFlat[(key + majorIntervals[i])%(chromaFlat.length)];
+        };
+    }
+    // generates minor scale from ???
+    minor(key) {
+        // OPTIONS
+        // work from mode perspective
+        // work again with steps
+    }
+}
+// ??? does it
+class Mode extends Scale {
+
+}
+
+const cMajScale = new Scale();
+console.log(cMajScale.major(0));
+
+
+
+
+///////////////////////////////////////////////////////////
 const Note = (note, octave) => {
 
 }
