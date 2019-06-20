@@ -38,21 +38,21 @@ majorScale(1);
 class Scale {
     constructor(key, type) {
     }
-    // generates major scale from interval pattern
+    // generate major scale from interval pattern
     major(key) {
         const majorIntervals = [0, 2, 4, 5, 7, 9, 11];
         for(let i = 0; i < majorIntervals.length; i++){
             return chromaFlat[(key + majorIntervals[i])%(chromaFlat.length)];
         };
     }
-    // generates minor scale from ???
+    // generates minor scale from interval pattern
     minor(key) {
         // OPTIONS
         // work from mode perspective
         // work again with steps
     }
 }
-// ??? does it
+
 class Mode extends Scale {
 
 }
@@ -63,7 +63,7 @@ console.log(cMajScale.major(0));
 
 
 
-///////////////////////////////////////////////////////////
+
 const Note = (note, octave) => {
 
 }
