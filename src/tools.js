@@ -21,19 +21,21 @@ const accidentals = ['bb', 'b', '', '#', '##'];
 
 // TODO: Make a Scale class and use these functions as subclasses
 
-// generates major scale from interval pattern
-function majorScale(key) {
-    if(typeof key === 'string') {
-        console.log(`You entered a string, currently only chromatic numbers can be used as a parameter`);
-    } else {
-        const majorScaleIntervals = [0, 2, 4, 5, 7, 9, 11];
-        for(let i = 0; i < majorScaleIntervals.length; i++){
-            const majorScale = chromaFlat[(key + majorScaleIntervals[i])%(chromaFlat.length)];
-            //console.log(majorScale);
-        };
-    }
+/**
+ * Generate major scale
+ * @param {Number} key
+ * 
+ */
+const majorScale = key => {
+    const majorScaleIntervals =[0, 2, 4, 5, 7, 9, 11];
+    let scale = []
+    for(let i = 0; i < majorScaleIntervals.length; i++){
+        scale.push(chromaFlat[(key + majorScaleIntervals[i])%(chromaFlat.length)])
+    };
+    return scale;
 }
-majorScale(1);
+
+console.log(majorScale(1))
 
 class Scale {
     constructor(key, type) {
@@ -51,19 +53,4 @@ class Scale {
         // work from mode perspective
         // work again with steps
     }
-}
-
-class Mode extends Scale {
-
-}
-
-const cMajScale = new Scale();
-console.log(cMajScale.major(0));
-
-
-
-
-
-const Note = (note, octave) => {
-
 }
